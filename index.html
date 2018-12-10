@@ -1,0 +1,407 @@
+<html>
+	
+	<head>
+		<title>House | SUIS Pudong</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="house_system.css"/>
+		<link rel="stylesheet" href="./Charts/normalize.css">
+    	<link rel="stylesheet" href="./Charts/style.css" media="screen" type="text/css">
+
+	</head>
+
+	<body style="padding:0px;margin: 0px;">
+
+		<div style="width:100%;height: 100%;background-color: rgba(0,0,0,0.2);z-index: 3;position:absolute;" id="background-image">
+			<div style="width: 90%;margin: auto;height: 100px;padding-top: 20px;z-index: 3;">
+				<div style=""><!--LOGO part-->
+					<a href="index.html"><p style="color:white;font-size: 40px;float:left;margin-top: 35px;">SUIS House</p></a>
+
+					<div style="float:right;margin-left: 30px;margin-top: 37.5px;"onmouseleave="shrinkDropDown(1)">
+						<a href="index.html"><p style="font-size: 20px;" class="radius_box" onmouseover="expandDropDown(1)"  id="box1">Houses <img src="Icons/bottom-full.png"></p></a>
+						<div style="display: none;" id="dropDown1">
+							<a href="index.html#greenCardDiv"><p style="font-size: 20px;border-bottom: none;border-radius:0px;" class="radius_box">Green cards</p></a>
+
+							<a href="#"><p style="font-size: 20px;border-radius: 0px 0px 5px 5px;" class="radius_box">Activities</p></a>
+						</div>
+					</div>
+
+
+					<div style="float:right;margin-left: 30px;margin-top: 37.5px;"onmouseleave="shrinkDropDown(2)">
+						<p style="font-size: 20px;" class="radius_box" onmouseover="expandDropDown(2)"  id="box2">Clubs <img src="Icons/bottom-full.png"></p>
+						<div style="display: none;" id="dropDown2">
+							<a href="IT_Club.html"><p style="font-size: 20px;border-bottom: none;border-radius:0px;" class="radius_box">IT Club</p></a>
+
+							<a href="Light_Bulb_Club.html"><p style="font-size: 20px;border-radius: 0px;border-bottom: 0px;" class="radius_box">Light Buld club</p></a>
+
+							<a href="Running_Club.html"><p style="font-size: 20px;border-radius: 0px 0px 5px 5px;" class="radius_box">Running club</p></a>
+						</div>
+					</div>
+
+					<a href="SMG.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">SMG</p></a>
+
+					<a href="CCA.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">CCA</p></a>
+
+					<a href="Student_Voice.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">Student Voice</p></a>
+
+
+				</div>
+				
+				<div id="arr" style="display: block;">
+				    <img id="left" src="Icons/left.png" onclick="leftClick()" style="width: 50px;">
+				    <img id="right" src="Icons/right.png" onclick="rightClick()">
+				</div>
+
+				<p style="text-align: center;margin-top: 25%;font-size: 65px;color: white;" id="main_text_middle">The new SUIS House Website</p>
+
+				<a href="javascript:hrefToArticle('Sports day');"><p style="width:157.5px;margin:auto;margin-top: 10%;border: 2px solid white;border-radius: 3px;" class="radius_box">Check it out <img src="Icons/right-full.png"></p></a>
+			</div>
+		</div>
+
+			<div class="box" id="box" style="z-index: 2;position:relative;">
+			    <div class="inner">
+			        <!--轮播图-->
+			        <ul>
+			            <li><a href="#"><div style="background-image: url('1.jpg');background-position: center;" id="img1"></div></a></li>
+			            <li><a href="#"><div style="background-image: url('2.jpg');background-position: center;" id="img2"></div></a></li>
+			            <li><a href="#"><div style="background-image: url('1.jpg');background-position: center;" id="img3"></div></a></li>
+			            <li><a href="#"><div style="background-image: url('2.jpg');background-position: center;" id="img4"></div></a></li>
+			            <li><a href="#"><div style="background-image: url('1.jpg');background-position: center;" id="img5"></div></a></li>
+
+			            <!--<li><a href="#"><div style="background-image: url('3.jpg');background-position: center;" id="img3"></div></a></li>-->
+
+			        </ul>
+
+			        <!--左右焦点-->
+			        
+			 		<div id="arr">
+				        <span id="left"> <</span>
+				        <span id="right">></span>
+				    </div>
+			    </div>
+			</div>
+
+
+		</div>
+
+		<div style="width:100%;background-color: white;background-attachment:fixed;padding-bottom: 70px;" id="greenCardDiv">
+			<div style="width: 75%;margin: auto;padding-top: 50px;">
+				
+				<p style="text-align: center;margin-top: 10%;font-size: 45px;color: green;">Green cards of the month</p>
+				<div style="width: 700px;height: 700px;"></div>
+
+				<div style="width: 600px;height: 600px;float: left;margin-top: -600px;">
+
+					<P style="text-align: center;"># of green cards for each house</P>
+
+					<canvas id="myChart" style="margin-top: 30px;"></canvas>
+					<script src="Chart.js/Chart.js"></script>
+					<script>
+					var ctx = document.getElementById("myChart").getContext('2d');
+					var myChart = new Chart(ctx, {
+					    type: 'bar',
+					    data: {
+					        labels: ["Red", "Blue", "Yellow", "Green"],
+					        datasets: [{
+					            label: '# of Green cards',
+					            data: [12, 19, 3, 5, 2, 3],
+					            backgroundColor: [
+					                'rgba(255, 99, 132, 0.2)',
+					                'rgba(54, 162, 235, 0.2)',
+					                'rgba(255, 206, 86, 0.2)',
+					                'rgba(75, 192, 192, 0.2)',
+					            ],
+					            borderColor: [
+					                'rgba(255,99,132,1)',
+					                'rgba(54, 162, 235, 1)',
+					                'rgba(255, 206, 86, 1)',
+					                'rgba(75, 192, 192, 1)',
+					            ],
+					            borderWidth: 1
+					        }]
+					    },
+					    options: {
+					        scales: {
+					            yAxes: [{
+					                ticks: {
+					                    beginAtZero:true
+					                }
+					            }]
+					        }
+					    }
+					});
+					</script>
+				</div>
+
+				<div style="width: 600px;height: 600px;float: left;margin-left:600px;margin-top: -600px;">
+					<P style="text-align: center;">Top 3 students with the highest # of green cards</P>
+
+					<canvas id="myChart1" style="margin-top: 30px;"></canvas>
+					<script src="Chart.js/Chart.js"></script>
+					<script>
+
+					new Chart(document.getElementById("myChart1"),{"type":"doughnut","data":{"labels":["Student 1","Student 2","Student 3"],"datasets":[{"label":"My First Dataset","data":[300,50,100],"backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]}]}});
+					</script>
+				</div>
+
+				<div id="hiddenArea" style="display: none;">
+					<div style="width: 700px;height: 400px;"></div>
+					<div style="width: 600px;height: 600px;float: left;margin-top: -600px;">
+
+						<P style="text-align: center;">Top 3 teachers who give out the highest # of green cards</P>
+
+					<canvas id="myChart2" style="margin-top: 30px;"></canvas>
+					<script src="Chart.js/Chart.js"></script>
+					<script>
+
+					new Chart(document.getElementById("myChart2"),{"type":"doughnut","data":{"labels":["Student 1","Student 2","Student 3"],"datasets":[{"label":"My First Dataset","data":[300,50,100],"backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]}]}});
+					</script>
+					</div>
+
+					<div style="width: 500px;height: 600px;float: left;margin-top: -600px;margin-left: 650px;">
+
+						<P style="text-align: center;"># of green cards for each house</P>
+
+						<canvas id="myChart3" style="margin-top: 30px;"></canvas>
+						<script src="Chart.js/Chart.js"></script>
+						<script>new Chart(document.getElementById("myChart3"),
+							{"type":"line"
+							,"data":{
+								"labels":["January","February","March","April","May","June","July"]
+							,"datasets":[
+								{
+									"label":"Red"
+									,"data":[65,59,80,81,56,55,40]
+									,"fill":false
+									,"borderColor":"rgb(255, 99, 132)"
+									,"lineTension":0.1}
+								,{
+									"label":"Blue"
+									,"data":[65,59,450,81,56,55,40]
+									,"fill":false
+									,"borderColor":"rgb(54, 162, 235)"
+									,"lineTension":0.1}
+								,{
+									"label":"Yellow"
+									,"data":[15,59,450,81,56,55,40]
+									,"fill":false
+									,"borderColor":"rgb(255, 206, 86)"
+									,"lineTension":0.1}
+								,{
+									"label":"Green"
+									,"data":[55,59,450,81,56,55,40]
+									,"fill":false
+									,"borderColor":"rgb(75, 192, 192)"
+									,"lineTension":0.1}
+								]
+							}
+							,"options":{}
+							});
+						</script>
+					</div>
+
+				</div>
+
+
+				<p style="width:157.5px;margin:auto;background-color: green;margin-top:-200px;border: 2px solid green;border-radius: 3px;color: white;" class="radius_box" onclick="expandGreenCards()">Check it out <img src="Icons/right-full.png" style="margin-top: -182.5px;padding-left: 5px;"></p>
+
+
+			</div>
+
+		</div>
+
+
+		<div style="width:100%;height: 120%;background-image: url('1.jpg');background-attachment:fixed;">
+			<div style="width: 90%;margin: auto;padding-top: 50px;">
+				
+				<p style="text-align: center;margin-top: 25%;font-size: 45px;color: white;">The sports day</p>
+
+				<div style="width: 900px;margin: auto;margin-top: 3%;">
+					<p style="text-align: center;font-size: 25px;color: white;">We had a good time afdafdasdf adsfadsfasdfas fasfasdfas fasfas fasfasdfa fafas fadsfasf asdfasdfas fasfsaf asfasdf adfasfd asdfasd</p>
+				</div>
+
+				<p style="width:157.5px;margin:auto;margin-top: 5%;border: 2px solid white;border-radius: 3px;" class="radius_box">Check it out <img src="Icons/right-full.png"></p>
+
+
+			</div>
+
+		</div>
+
+		<div style="width:100%;height: 120%;background-color: rgba(0,0,0,0.5);background-image: url('2.jpg');background-attachment:fixed;">
+			<div style="width: 90%;margin: auto;padding-top: 50px;">
+				<p style="text-align: center;margin-top: 25%;font-size: 45px;color: white;">Another house event</p>
+
+				<div style="width: 900px;margin: auto;margin-top: 3%;">
+					<p style="text-align: center;font-size: 25px;color: white;">We had a good time afdafdasdf adsfadsfasdfas fasfasdfas fasfas fasfasdfa fafas fadsfasf asdfasdfas fasfsaf asfasdf adfasfd asdfasd</p>
+				</div>
+
+				<p style="width:157.5px;margin:auto;margin-top: 5%;border: 2px solid white;border-radius: 3px;" class="radius_box">Check it out <img src="Icons/right-full.png"></p>
+
+			</div>
+
+		</div>
+
+		<div style="width:100%;background-color:rgba(1,1,1,0.9);">
+			<div style="width: 90%;margin: auto;">
+				<p style="text-align:center;color: white;padding-top:20px;padding-bottom: 20px;">Created by Henry Z and David P | Copyright &#169; 2018 suispudong.tk</p>
+
+
+			</div>
+
+		</div>
+
+	<script>
+
+		window.onload = function(){
+
+			document.getElementById("img1").style.height = window.innerHeight + "px";
+			document.getElementById("img1").style.width = window.innerWidth + "px";
+			document.getElementById("img2").style.height = window.innerHeight + "px";
+			document.getElementById("img2").style.width = window.innerWidth + "px";
+
+			document.getElementById("img3").style.height = window.innerHeight + "px";
+			document.getElementById("img3").style.width = window.innerWidth + "px";
+			document.getElementById("img4").style.height = window.innerHeight + "px";
+			document.getElementById("img4").style.width = window.innerWidth + "px";
+
+			document.getElementById("img5").style.height = window.innerHeight + "px";
+			document.getElementById("img5").style.width = window.innerWidth + "px";
+			document.getElementById("box").style.height = window.innerHeight + "px";
+			//document.getElementById("inner").style.height = window.innerHeight + "px";
+			//document.getElementById("inner").style.height = window.innerHeight + "px";
+			document.getElementById("background-color").style.height = window.innerHeight + "px";
+
+		}
+
+		function expandGreenCards(){
+			if(document.getElementById("hiddenArea").style.display == "block"){
+				document.getElementById("hiddenArea").style.display = "none";
+			}
+			else{
+				document.getElementById("hiddenArea").style.display = "block";
+			}
+			
+		}
+
+		function expandDropDown(number) {
+			document.getElementById("dropDown" + number).style.display = "block";
+			
+		}
+
+		function shrinkDropDown(number) {
+			document.getElementById("dropDown" + number).style.display = "none";
+		}
+
+
+	    function my$(id) {
+	        return document.getElementById(id);
+	    }
+
+	    var sarr = ["The new SUIS house website", "The sports day", "The sports day", "The sports day", "The sports day"];
+	 
+	    var box=my$("box");
+	    var inner=box.children[0];
+	    var ulObj=inner.children[0];
+	    var list = 5;
+	    list--;
+
+	    var olObj=inner.children[1];
+	    var arr=my$("arr");
+	    var imgWidth = window.innerWidth;
+	    var right=my$("right");
+	    var left=my$("right");
+	    var pic=0;
+	    var mainText=my$("main_text_middle");
+	    var currentValue = 0;
+	 
+	 
+	    //olObj.children[0].className = "current";
+	    ulObj.appendChild(ulObj.children[0].cloneNode(true));
+	 
+	    var timeId = setInterval(onmouseclickHandle,3000);
+
+	 	var isUserClicking = false;
+
+
+	    function onmouseclickHandle() {
+	        if (pic == list) {
+	            pic = -1;
+	            //ulObj.style.left = 0 + "px";
+	        }
+	        if (currentValue == sarr.length - 1) {
+	            currentValue = -1;
+	        }
+	        pic++;
+	        currentValue++;
+	        mainText.innerText = sarr[currentValue];
+	        animate(ulObj, -pic * imgWidth, "auto");
+
+	        
+	    }
+	    function rightClick() {
+	        if (pic == list) {
+	            pic = 0;
+	            ulObj.style.left = 0 + "px";
+	        }
+	        if (currentValue == sarr.length - 1) {
+	            currentValue = -1;
+	        }
+	        pic++;
+	        currentValue++;
+	        isUserClicking = true;
+	        mainText.innerText = sarr[currentValue];
+	        animate(ulObj, -pic * imgWidth, "right");
+	        setInterval(delayMovement,3000);
+
+	    }
+	    function leftClick() {
+	        if (pic==0){
+	            pic=list-1;
+	            ulObj.style.left=-pic*imgWidth+"px";
+	        }
+	        if (currentValue == sarr.length - 1) {
+	            currentValue = -1;
+	        }
+	        pic--;
+	        currentValue--;
+	        mainText.innerText = sarr[currentValue];
+	        animate(ulObj,-pic*imgWidth, "left");
+	        setInterval(delayMovement,3000);
+
+	    };
+
+	    function delayMovement(){
+	    	isUserClicking = false;
+	    	clearInterval(element.timeId);
+	    }
+
+
+
+	    
+	    function animate(element, target, where) {
+	    	if(where == "auto" && isUserClicking == true){
+	    		return;
+	    	}
+	        clearInterval(element.timeId);
+	        element.timeId = setInterval(function () {
+	            var current = element.offsetLeft;
+	            var step = 20;
+	            step = current < target ? step : -step;
+	            current += step;
+	            if (Math.abs(current - target) > Math.abs(step)) {
+	                element.style.left = current + "px";
+	            } else {
+	                clearInterval(element.timeId);
+	                element.style.left = target + "px";
+	            }
+	        }, 10);
+	    }
+
+	    function hrefToArticle(src){
+	    	window.location.href = "article_page.html#" + src;
+	    }
+
+	</script>
+	</body>
+
+</html>
+

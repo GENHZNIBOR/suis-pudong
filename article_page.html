@@ -1,0 +1,339 @@
+<html>
+	
+	<head>
+		<title>--- | SUIS Pudong</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="house_system.css"/>
+		<link rel="stylesheet" href="./Charts/normalize.css">
+    	<link rel="stylesheet" href="./Charts/style.css" media="screen" type="text/css">
+
+	</head>
+
+	<body style="padding:0px;margin: 0px;">
+
+		<div id="blackCover" style="width:100%;height:100%;background-color:black;background-color: rgba(0,0,0,0.7);position:fixed;z-index:100;display: none;" onclick="cancelZoom()">
+
+
+			<div style="margin:auto;margin-top: 5%;" id="outsideImg" align="center">
+				<img id="bigImg" style="max-width: 60%;" align="center">
+			</div>
+		</div>
+
+
+		<div style="width:100%;height:100%;background-color: rgba(0,0,0,0.5);background-image: url('1.jpg');padding-bottom: 200px;background-attachment: fixed;">
+
+			<div style="width: 90%;margin: auto;height: 100px;padding-top: 20px;z-index: 3;">
+				<div style=""><!--LOGO part-->
+					<a href="index.html"><p style="color:white;font-size: 40px;;float:left;margin-top: 35px;">SUIS House</p></a>
+
+					<div style="float:right;margin-left: 30px;margin-top: 37.5px;"onmouseleave="shrinkDropDown(1)">
+						<a href="index.html"><p style="font-size: 20px;" class="radius_box" onmouseover="expandDropDown(1)"  id="box1">Houses <img src="Icons/bottom-full.png"></p></p></a>
+						<div style="display: none;" id="dropDown1">
+							<a href="index.html#greenCardDiv"><p style="font-size: 20px;border-bottom: none;border-radius:0px;" class="radius_box">Green cards</p></a>
+
+							<a href="#"><p style="font-size: 20px;border-radius: 0px 0px 5px 5px;" class="radius_box">Activities</p></a>
+						</div>
+					</div>
+
+
+					<div style="float:right;margin-left: 30px;margin-top: 37.5px;"onmouseleave="shrinkDropDown(2)">
+						<p style="font-size: 20px;" class="radius_box" onmouseover="expandDropDown(2)"  id="box2">Clubs <img src="Icons/bottom-full.png"></p></p>
+						<div style="display: none;" id="dropDown2">
+							<a href="IT_Club.html"><p style="font-size: 20px;border-bottom: none;border-radius:0px;" class="radius_box">IT Club</p></a>
+
+							<a href="Light_Bulb_Club.html"><p style="font-size: 20px;border-radius: 0px;border-bottom: 0px;" class="radius_box">Light Buld club</p></a>
+
+							<a href="Running_Club.html"><p style="font-size: 20px;border-radius: 0px 0px 5px 5px;" class="radius_box">Running club</p></a>
+						</div>
+					</div>
+
+					<a href="SMG.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">SMG</p></a>
+
+					<a href="CCA.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">CCA</p></a>
+
+					<a href="Student_Voice.html"><p style="font-size: 20px;float:right;margin-left: 30px;margin-top: 37.5px;" class="radius_box">Student Voice</p></a>
+
+
+				</div>
+				
+				<p style="text-align: center;margin-top: 25%;font-size: 65px;color: white;" id="main_text_middle">___ Title</p>
+
+			</div>
+
+
+
+		</div>
+
+		<div style="width:100%;background-color: white;padding-bottom: 100px;">
+			<div style="width: 70%;margin: auto;padding-top: 50px;padding-bottom: 40px;">
+				<p style="margin-top: 10%;font-size: 45px;text-align: center;font-family: 'Dosis';" id="Inner_title">Inner_title</p>
+
+				<div style="width: 70%;margin:auto;margin-top: 5%;text-align:center;border-top:1.25px solid #ccc;padding-top: 30px;" id="paragraphBox">
+					<!--Sample data-->
+					<!--<p class="paragraph"><strong>TwoSet Violin</strong> — founded in 2014 by the two Australian musicians Brett Yang and Eddy Chen—first went viral with their funny and sometimes painfully accurate videos depicting life as a classical musician.</p>-->
+
+
+				</div>
+
+				<div style="width: 70%;margin:auto;text-align:center;border-top:1.25px solid #ccc;padding-top: 30px;">
+					<div style="height: 125px;margin:auto;width:400px;" id="phoDiv">
+						<!--Sample data-->
+						<!--<img src="1.jpg" class="article_photo" onclick="openIMG('1.jpg')">-->
+
+
+
+
+					</div>
+
+
+					
+
+				</div>
+
+
+				<div style="width: 70%;margin:auto;margin-top: 2.5%;text-align:center;border-top:1.25px solid #ccc;padding-top: 30px;" id="fileDiv">
+					<!--Sample data-->
+
+					<!--<div class="new-box">
+						<div class="new-box-icon" style="color: rgb(255, 90, 90);">P</div>
+
+						<a href="1.docx"><p style="float: left;padding-top: 17.5px;padding-left: 7.5px;font-size: 15px;color: #546980;">File.pdf</p></a>
+
+						<p style="float: right;padding-top: 17.5px;padding-right: 15px;font-size: 15px;color: #546980;">23.5MB</p>
+
+					</div>-->
+
+
+					
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div style="width:100%;background-color:rgba(1,1,1,0.9);">
+			<div style="width: 90%;margin: auto;">
+				<p style="text-align:center;color: white;padding-top:20px;padding-bottom: 20px;">Created by Henry Z and David P | Copyright &#169; 2018 suis-house.com</p>
+
+
+			</div>
+
+		</div>
+
+	<script>
+		function filterColor(sep){
+        	if(sep == "doc" || sep == "docx"){
+        		sugColor = "#4D97FF";
+        		sugText = "W";
+        	}
+        	else if(sep == "ppt" || sep == "pptx"){
+        		sugColor = "#FF9743";
+        		sugText = "P";
+        	}
+        	else if(sep == "xls"){
+        		sugColor = "#6cc422";
+        		sugText = "X";
+        	}
+        	else if(sep == "pdf"){
+        		sugColor = "#FF5A5A";
+        		sugText = "P";
+        	}
+        	else if(sep == "ai"){
+        		sugColor = "#ffd300";
+        		sugText = "Ai";
+        	}
+        	else if(sep == "ps"){
+        		sugColor = "#86d2ff";
+        		sugText = "Ps";
+       		}
+        	else if(sep == "jpeg"){
+        		sugColor = "#ff7743";
+        		sugText = "Je";
+        	}
+        	else if(sep == "swf"){
+        		sugColor = "#FF5A5A";
+        		sugText = "fl";
+        	}
+        	else if(sep == "jpg"){
+        		sugColor = "#ff7743";
+        		sugText = "Jp";
+        	}
+       		else if(sep == "mp4" || sep == "mp3"){
+        		sugColor = "#8183f1";
+        		sugText = "M";
+        	}
+        	else if(sep == "rmvb"){
+        		sugColor = "#8183f1";
+        		sugText = "R";
+        	}
+        	else if(sep == "txt"){
+        		sugColor = "#4D97FF";
+        		sugText = "T";
+        	}
+        	else if(sep == "html"){
+        		sugColor = "#eb6024";
+        		sugText = "H5";
+        	}
+        	else if(sep == "css"){
+        		sugColor = "#349ad7";
+        		sugText = "C3";
+        	}
+        	else if(sep == "js"){
+        		sugColor = "#ffda3e";
+        		sugText = "Js";
+        	}
+        	else if(sep == "exe"){
+        		sugColor = "#aaaaaa";
+        		sugText = "E";
+        	}
+        	else if(sep == "dmg"){
+        		sugColor = "#aaaaaa";
+        		sugText = "D";
+        	}        
+        	else{
+        		sugColor = "#89c9d9";
+        		sugText = "O";
+        	}
+
+        	return [sugColor, sugText]
+
+      }
+
+		var mockDatabase = [
+			["Sports day","Inner_title\nFirst paragraph\nSecond paragraph\nThird paragraph","1.jpg^2.jpg","1.pdf~23.5MB^1.docx~23.5MB"],
+			["2 day","Inner_title\nFirst paragraph\nSecond paragraph\nThird paragraph","1.jpg^2.jpg^3.jpg","2.pdf~23.5MB^2.docx~23.5MB"],
+		];
+
+		window.onload = function(){
+			var address = location.href.split("#")[1];
+			if(address.indexOf(" ") != -1){
+				address = address;
+			}
+			else if(address.indexOf("%20") != -1){
+				address = address.replace("%20"," ");
+			}
+
+			data = [];
+			for(i=0;i<mockDatabase.length;i++){
+				if(mockDatabase[i][0] == address){
+					data = mockDatabase[i];
+				}
+			}
+
+			document.getElementById("main_text_middle").innerText = data[0];
+			document.title = data[0] + " | SUIS House";
+			var paragraphBox = document.getElementById("paragraphBox");
+			paragraph = data[1].split("\n");
+
+			document.getElementById("Inner_title").innerText = paragraph.shift();
+
+			for(i=0;i<paragraph.length;i++){
+				
+				var p = document.createElement("p");
+				p.innerText = paragraph[i];
+				p.setAttribute("class","paragraph");
+				paragraphBox.appendChild(p);
+			}
+
+			//-----------------------------------
+
+			var phoDiv = document.getElementById("phoDiv");
+			var photos = data[2].split("^");
+
+			for(i=0;i<photos.length;i++){
+				
+				var img = document.createElement("img");
+				img.setAttribute("class","article_photo");
+				img.setAttribute("src",photos[i]);
+				img.setAttribute("onclick","openIMG('" + photos[i] + "')");
+				phoDiv.appendChild(img);
+			}
+
+
+			phoDiv.style.width = (photos.length * 125) + (photos.length * 10) + "px";
+
+			//-----------------------------------
+
+			var fileDiv = document.getElementById("fileDiv");
+			var files = data[3].split("^");
+
+
+
+			for(i=0;i<files.length;i++){
+				var file_title = files[i].split("~")[0];
+				var file_size = files[i].split("~")[1];
+				
+				var singleFileDiv = document.createElement("div");
+				singleFileDiv.setAttribute("class","new-box");
+
+
+
+				var new_box_icon = document.createElement("div");
+				new_box_icon.setAttribute("class","new-box-icon");
+				
+
+
+				file_address = file_title.split(".");
+				new_box_icon.innerText = filterColor(file_address[file_address.length - 1])[1];
+				new_box_icon.style.color = filterColor(file_address[file_address.length - 1])[0];
+
+				singleFileDiv.appendChild(new_box_icon);
+
+				var a = document.createElement("a");
+				a.setAttribute("href",file_title);
+
+				var p = document.createElement("p");
+				p.setAttribute("class",'new-box-title');
+				p.innerText = file_title;
+				a.appendChild(p);
+
+				singleFileDiv.appendChild(a);
+
+				var sizeP = document.createElement("p");
+				sizeP.setAttribute("class","new-box-size");
+				sizeP.innerText = file_size;
+
+				singleFileDiv.appendChild(sizeP);
+
+				fileDiv.appendChild(singleFileDiv);
+			}
+
+
+
+		}
+
+
+		function expandDropDown(number) {
+			document.getElementById("dropDown" + number).style.display = "block";
+			
+		}
+
+
+
+		function shrinkDropDown(number) {
+			document.getElementById("dropDown" + number).style.display = "none";
+		}
+
+		function openIMG(src){
+			document.getElementById("blackCover").style.display = "block";
+			document.getElementById("bigImg").src = src;
+		}
+
+		function cancelZoom(){
+			document.getElementById("blackCover").style.display = "none";
+		}
+
+
+
+
+
+
+
+	    
+
+
+
+	</script>
+	</body>
+</html>

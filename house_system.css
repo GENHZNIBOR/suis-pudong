@@ -1,0 +1,170 @@
+* {  
+    margin: 0;  
+    padding: 0;
+
+}  
+body{
+	font-family: 'Dosis';
+}
+
+@font-face {
+    font-family: 'Dosis';
+    src:url('Fonts/Dosis/Dosis-Regular.otf');
+}
+@font-face {
+    font-family: 'Roboto-Thin';
+    src:url('Fonts/Roboto/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src:url('Fonts/Roboto/Roboto-Regular.ttf');
+}
+a{
+	text-decoration: none;
+}
+.box {  
+    width: 100%;  
+  
+}  
+.inner{  
+    width: 100%;  
+    height: 800px;  
+    position: relative;  
+    overflow: hidden;  
+}  
+.inner img{  
+    background-size:contain|cover;
+    height: auto;
+}  
+ul {  
+    width: 1000%;  
+    position: absolute;  
+    list-style: none;  
+    left:0;  
+    top: 0;  
+}  
+.inner li{  
+    float: left;  
+}  
+  
+ol {  
+    position: absolute;  
+    height: 20px;  
+    right: 20px;  
+    text-align: center;  
+    padding: 5px;  
+}  
+ol li{  
+    display: inline-block;  
+    width: 20px;  
+    height: 20px;  
+    line-height: 20px;  
+    background-color: #fff;  
+    margin: 5px;  
+    cursor: pointer;  
+  
+}  
+ol .current{  
+    background-color: red;  
+}  
+#arr{  
+    display: none;  
+}  
+#arr img{  
+    width: 40px;  
+    height: 50px;  
+    position: absolute;  
+    left: 5px;  
+    top: 50%;  
+    margin-top: -20px;  
+    cursor: pointer;  
+    line-height: 40px;  
+    text-align: center;  
+}  
+#arr #right {  
+    right: 5px;  
+    left: auto;  
+}
+.radius_box{
+	padding: 9px;
+	border-radius: 2.5px;
+	padding-left:12.5px;
+	padding-right:15px;
+	color:white;
+	font-family: 'Dosis';
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}
+.radius_box:hover{
+	text-decoration: underline;
+	color: rgba(255,255,255, 0.8)
+}
+.new-box{
+	width: 490px;
+	height: 55px;
+	border: 1.5px solid #dae1e8;
+	border-radius: 3px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+.new-box-icon{
+	background-color: white;
+	border:1px solid #dfe7f1;
+	border-radius: 3px;
+	margin-left:7.5px;
+	margin-top: 7.5px;
+	text-align: center;
+	padding-top:6.5px;
+	width: 34px;
+	height: 38px;
+	font-size: 20px;
+	float: left;
+}
+.new-box-title{
+    float: left;
+    padding-top: 17.5px;
+    padding-left: 7.5px;
+    font-size: 15px;
+    color: #546980;
+}
+.new-box-size{
+    float: right;
+    padding-top: 17.5px;
+    padding-right: 15px;
+    font-size: 15px;
+    color: #546980;
+    
+}
+.clickAnywhereTo{
+    text-align: center;
+    color: white;
+    margin-top:2.5%;
+    font-size: 22px;
+    font-family: 'Trebuchet MS';
+    text-decoration: underline;
+    cursor: pointer;
+    padding-bottom: 0px;
+    display: none;
+}
+.paragraph{
+	font-size: 20px;
+	padding-bottom: 20px;
+	color: #111111;
+	font-family: 'Roboto';
+}
+
+p img{
+    width: 20px;
+    display: block;
+    float: right;
+    margin-top: 2.5px;
+}
+.article_photo{
+    width: 125px;
+    height: 125px;
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
+}
